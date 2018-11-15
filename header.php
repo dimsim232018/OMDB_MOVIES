@@ -11,11 +11,18 @@
 
 <body>
 <?php include 'session.php'; ?>
-   <nav class="navbar navbar-default">
-       <div class="container">
-          <div class="navbar-header">
-             <a class="nav-brand" href="index.php">WatchMyMovie</a>
-             <a class="nav-brand" href="login.php">Login</a>
-		  </div>
-       </div>    
-   </nav> 
+<br>
+      
+ <div class="container">
+             <table>                
+                <tr>
+                   <td><a class="btn btn-primary" href="index.php">WatchMyMovie</a></td> 
+                   <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                   <td><a class="btn btn-primary" href="login.php">Login</a></td>
+                   
+                </tr>
+            </table>
+                         
+          </div>   
+     </nav>	
+   </div>
