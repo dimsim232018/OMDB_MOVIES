@@ -1,15 +1,4 @@
-<!DOCTYPE html >
-<html>
-
-<head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Register</title>
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/css.css">
-
-</head>
-
-<body>
+<?php include 'header.php';?>
       
    <div class="header">
       <h2>Register</h2>
@@ -35,7 +24,7 @@
          <button type="submit" name="register" class="btn btn-primary">Register</button>
       </div>
       <p>
-         Already a member?<a href="Login.php">&nbsp;&nbsp;Sing in</a>
+         Already a member?<a href="login.php">&nbsp;&nbsp;Sing in</a>
       </p>
     </form> 
     
