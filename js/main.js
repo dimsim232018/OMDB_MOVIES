@@ -22,7 +22,7 @@ function getMovies(searchText){
                   <div class="well text-center">
                      <img src="${movie.Poster}">
                      <h5>${movie.Title}</h5>
-                     <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-primary" href="#">Λεπτομέρειες</a>
+                     <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-primary" href="movie.php">Λεπτομέρειες</a>
                   </div>
                </div>
 			   
@@ -39,7 +39,7 @@ function getMovies(searchText){
 
 function movieSelected(id){    
    sessionStorage.setItem('movieId',id);
-   window.location= 'movie.html' ;
+   window.location= 'movie.php' ;
    return false;
 }	
 
@@ -73,7 +73,7 @@ function getMovie(){
 		      ${movie.Plot} &nbsp;&nbsp;&nbsp; 
 			 <a href="https://www.imdb.com/title/${movie.imdbID}/" target="_blank" class="btn btn-primary">View IMDB</a>
 			 &nbsp;&nbsp;&nbsp;&nbsp;
-			  <a href="index.html" class="btn btn-primary">Επιστροφή...</a>
+			  <a href="index.php" class="btn btn-primary">Επιστροφή...</a>
 		   </div>
 		</div>
       `;

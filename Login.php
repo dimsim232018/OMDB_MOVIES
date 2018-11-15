@@ -1,20 +1,9 @@
-<!DOCTYPE html >
-<html>
-
-<head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Login</title>
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/css.css">
-
-</head>
-
-<body>
+<?php include 'header.php'; ?>
       
    <div class="header">
       <h2>Login</h2>
    </div> 
-   <form method="post" action="Login.php">
+   <form method="post" action="login.php">
       <div class="input-group">
          <label>Username</label>
          <input type="text" name="username">   
@@ -29,7 +18,7 @@
          <button type="submit" name="login" class="btn btn-primary">Login</button>
       </div>
       <p>
-         Not yet a member?<a href="Register.php">&nbsp;&nbsp;Sing up</a>
+         Not yet a member?<a href="register.php">&nbsp;&nbsp;Sing up</a>
       </p>
     </form> 
     
