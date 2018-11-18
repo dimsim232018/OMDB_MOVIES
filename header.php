@@ -11,6 +11,7 @@
 
 <body>
 <?php include 'session.php'; ?>
+<<<<<<< HEAD
    <nav class="navbar navbar-default">
        <div class="container">
           <div class="navbar-header">
@@ -23,3 +24,25 @@
 		  </div>
        </div>    
    </nav> 
+=======
+<br>
+      
+ <div class="container">
+             <table>                
+                <tr>
+                   <td><a class="btn btn-primary" href="index.php">WatchMyMovie</a></td> 
+                   <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                   <td>
+                    <?php if (!isset($uname)){?>
+                        <a class="btn btn-primary" href="login.php"><?php echo 'Login';?></a>
+                    <?php }else{?>
+                        <a class="btn btn-primary" href="logout.php"><?php echo 'Logout';?></a>
+                    <?php };?>  
+                   </td>
+                </tr>
+            </table>
+                         
+          </div>   
+     </nav>	
+   </div>
+>>>>>>> 29278d95f539e0d023cce2cc9911d122288ac441

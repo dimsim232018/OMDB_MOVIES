@@ -1,5 +1,5 @@
 ﻿#movies img, #movie img {
-	width:30%
+	width:50%
 }	
 @media(min-width:960px){
    #movies .col-md-3 .well{
@@ -71,7 +71,7 @@
 }
 
 
-form{
+.form{
 	
 	width:30%;
 	margin: 0px auto;
