@@ -1,23 +1,23 @@
-<?php include 'header.php'; ?>
-<?php include 'session.php'; ?>
-<?php
-// already logged in
-	if (isset($uid)){
+<?php include 'server.php';
+      include 'header.php'; 
+      // already logged in
+	  if (isset($uid)){
 		header('Location: index.php');
-	}  
-?>    
+	  }  
+?>     
    <div class="header">
       <h2>Login</h2>
    </div> 
    <form method="post" action="login.php" class="form">
+      <?php include('errors.php');?>
       <div class="input-group">
          <label>Username</label>
-         <input type="text" name="username" placeholder="Enter your username">   
+         <input type="text" name="username" placeholder="Enter your username" value="<?php echo $username?>">   
       </div>
      
       <div class="input-group">
          <label>Password</label>
-         <input type="text" name="password_1" placeholder="Enter your password">   
+         <input type="password" name="password" placeholder="Enter your password">   
       </div>
       
       <div class="input-group">

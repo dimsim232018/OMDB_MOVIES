@@ -12,7 +12,7 @@
 <body>
 <?php include 'session.php'; ?>
 
-      
+ <br>     
  <div class="container">
              <table>                
                 <tr>
@@ -31,4 +31,3 @@
           </div>   
      </nav>	
    </div>
-
