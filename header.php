@@ -15,7 +15,11 @@
        <div class="container">
           <div class="navbar-header">
              <a class="nav-brand" href="index.php">WatchMyMovie</a>
-             <a class="nav-brand" href="login.php">Login</a>
+             <?php if (!isset($uname)){?>
+             <a class="nav-brand" href="login.php"><?php echo 'Login';?></a>
+             <?php }else{?>
+             <a class="nav-brand" href="logout.php"><?php echo 'Logout';?></a>
+             <?php };?>
 		  </div>
        </div>    
    </nav> 
