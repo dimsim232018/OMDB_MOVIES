@@ -1,5 +1,11 @@
 <?php include 'header.php'; ?>
-      
+<?php include 'session.php'; ?>
+<?php
+// already logged in
+	if (isset($uid)){
+		header('Location: index.php');
+	}  
+?>    
    <div class="header">
       <h2>Login</h2>
    </div> 
