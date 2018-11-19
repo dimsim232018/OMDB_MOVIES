@@ -1,7 +1,7 @@
 <?php include 'server.php';
       include 'header.php'; 
       // already logged in
-	  if (isset($uid)){
+	  if (isset($username)){
 		header('Location: index.php');
 	  }  
 ?>     
