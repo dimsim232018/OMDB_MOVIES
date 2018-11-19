@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<?php include 'session.php'; ?>
+<?php include 'server.php'; ?>
 
  <br>     
  <div class="container">
