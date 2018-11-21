@@ -78,8 +78,9 @@
             }
             else
             {  
-               array_push($errors,"Wrong username/password combination");
-               header('location: login.php'); //redirect to login page
+               array_push($errors,"Wrong username/password combination");//add error to errors array
+
+              // header('location: login.php'); //redirect to login page
             }      
 
          }
