@@ -1,5 +1,15 @@
-<?php include 'header.php'; ?>
-   
+<?php include 'server.php';
+      include 'header.php'; 
+      // already logged in
+	  if (isset($uid)){
+		header('Location: index.php');
+	  } 
+	  else{
+	  $uid=1;
+	  } 
+?> 
+
+
    <br>
    
       <div class="container">
@@ -13,10 +23,12 @@
    
    <script src="js/jquery-3.3.1.min.js" ></script>
    <script src="js/axios.min.js"></script>
-   <script src="js/main.js"></script> 
-   <script>
+   <script src="main.js"></script>
+      <script>
       getMovie();
-   </script>	  
+   </script>
+  
+
 </body>
 
 </html>
