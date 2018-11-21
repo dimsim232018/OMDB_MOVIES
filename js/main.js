@@ -43,7 +43,7 @@ function movieSelected(id){
    return false;
 }	
 
-function getMovie(){
+function getMovie(param){
 	 let movieId = sessionStorage.getItem('movieId');
 	  axios.get('http://www.omdbapi.com/?apikey=c5c1ebdb&i='+movieId)   
       .then((response)=> {
@@ -57,8 +57,8 @@ function getMovie(){
 			<div class="col-md-8">
 			   <h2>${movie.Title}</h2>
 			      <ul class="list-group">
-				     <li class="list-group-item"> <strong>Κατηγορία :</strong> ${movie.Genre} </li>
-					 <li class="list-group-item"> <strong>Κυκλοφορία :</strong> ${movie.Released} </li>
+				     <li class="list-group-item" id="genre"> <strong>Κατηγορία :</strong> ${movie.Genre} </li>
+					 <li class="list-group-item" > <strong>Κυκλοφορία :</strong> ${movie.Released} </li>
 					 <li class="list-group-item"> <strong>Σκηνοθέτης :</strong> ${movie.Director} </li>
 					 <li class="list-group-item"> <strong>Ηθοποιοί :</strong> ${movie.Actors} </li>
 					 <li class="list-group-item"> <strong>Περιγραφή :</strong> ${movie.Plot} </li>
@@ -73,10 +73,20 @@ function getMovie(){
 		      ${movie.Plot} &nbsp;&nbsp;&nbsp; 
 			 <a href="https://www.imdb.com/title/${movie.imdbID}/" target="_blank" class="btn btn-primary">View IMDB</a>
 			 &nbsp;&nbsp;&nbsp;&nbsp;
-			  <a href="index.php" class="btn btn-primary">Επιστροφή...</a>
-		   </div>
-		</div>
-      `;
+			  <a href="index.php" class="btn btn-primary">Επιστροφή...</a>&nbsp;&nbsp;&nbsp;&nbsp;`;
+              if (param){
+               output+=` 
+			  <form id="myForm" action ="addtofav.php"  method = "POST">
+				<input  id = "gen" name = "gen" type="hidden" value="${movie.Genre}"/>
+				<input  id = "title" name = "title" type="hidden" value="${movie.Title}"/>
+				<input  id = "movid" name = "movid" type="hidden" value="${movie.imdbID}" />
+				<button id="sub" class="btn btn-primary">Προσθήκη στην λίστα</button>
+            </form>
+            <span id="result"></span></div></div>`;}
+              else{
+                  output+=`</div></div>`;
+              }      
+		   
        $('#movie').html(output);	  
       })
       .catch((err)=> {
@@ -84,3 +94,5 @@ function getMovie(){
       
      });   
 }
+
+

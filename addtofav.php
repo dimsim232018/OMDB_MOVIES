@@ -1,27 +1,22 @@
-<?php include 'server.php';
-      include 'header.php'; 
-      // already logged in
-	  if (isset($uid)){
-		header('Location: index.php');
-	  } 
-	  else{
-	  $uid=1;
-	  } 
+<?php
+  include 'session.php'; 
+ require_once 'dbconnect.php';
 
-$userid = $uid;
+ global $mysql;
+//$userid = $uid;
 $movid=$_POST['movid'];
 $genre=$_POST['gen'];
 $title=$_POST['title'];
 
 
-$sql = "INSERT INTO favmov VALUES ($userid,'$movid','$title','$genre')";
+$sql = "INSERT INTO movie VALUES ($uid,'$movid','$title','$genre')";
 
-if ($db->query($sql) === TRUE) {
+if ($mysql->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $db->error;
+    echo "Error: " . $sql . "<br>" . $mysql->error;
 }
 
-$db->close();
+
 
 ?>
