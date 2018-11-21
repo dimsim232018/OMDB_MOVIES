@@ -1,6 +1,8 @@
 <?PHP
-require_once 'helper.php';
-if (isset($uid)) log_user_action($uid,UserAction::Logout,$uname);
-session_destroy();
-header('Location: index.php');
+
+if (isset($username)){
+      session_destroy();
+      unset($_SESSION['username']);
+      header('location:login.php');
+}
 ?>

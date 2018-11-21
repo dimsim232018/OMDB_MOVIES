@@ -1,7 +1,6 @@
 <?php
    
 
-   include 'dbconnect.php';
    $username = "";
    $email = "";
    $errors = array();

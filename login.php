@@ -1,9 +1,9 @@
 <?php include 'server.php';
       include 'header.php'; 
       // already logged in
-	  if (isset($uid)){
-		header('Location: index.php');
-	  }  
+	  //if (isset($username)){
+	//	header('Location: index.php');
+	  //}  
 ?>     
    <div class="header">
       <h2>Login</h2>
