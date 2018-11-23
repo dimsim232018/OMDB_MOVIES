@@ -9,7 +9,7 @@
             <div id="movie" class="well">
                
             </div>
-            <div id="msg_box"></div>
+            <p style="font-size:12px;color:green;" id="msg_box"></p>
         
 	  </div>	 
    
