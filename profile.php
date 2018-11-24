@@ -1,12 +1,10 @@
 <?php
 include 'header.php'; 
 require_once 'dbconnect.php';
-?>
-
-<?php 
+$uid=1;
 global $mysql;
 
-if (!($stmt = $mysql->prepare("select title from movie where user_id=?"))) {
+if (!($stmt = $mysql->prepare("select movtitle,genre from movie where userid=?"))) {
 //			 throw new Exception("Prepare failed: (" . $mysql->errno . ") " . $mysql->error);
 			 return false;
 		}
@@ -25,14 +23,36 @@ if (!($stmt = $mysql->prepare("select title from movie where user_id=?"))) {
         if($result->num_rows === 0) exit('No rows');
         
 ?>
+   <script src="js/jquery-3.3.1.min.js" ></script>
+   <script src="js/axios.min.js"></script>
+   <script src="js/main.js"></script> 
 
 <br>
  <div class="container">
       <div class="jumbotron">
          <h3 class="text-center">Your wishlist</h3>   
-         <?php while($row = $result->fetch_assoc()) {
-            $title = $row['title'];?>
-            <p><?php echo $title; ?></p>
-         <?php } ?>
-      </div>
+         <div class="table-responsive">  
+                     <table id="data-table">  
+                          <thead>  
+                               <tr>  
+                                    <td>Title</td>  
+                                    <td>Genre</td>   
+                               </tr>  
+                          </thead> 
+                          <?php while($row = $result->fetch_assoc()) 
+                          {
+            				$title = $row['movtitle'];
+            				$genre = $row['genre'];
+            			  ?>
+            				<tr>
+            				<td><?php echo $title; ?></td>
+            				<td><?php echo $genre; ?></td>
+            				<td><button class="btn btn-primary" onclick="deletemovie(this)">Delete</button></td>
+            				</tr>
+        				  <?php } ?> 
+                      </table>  
+           </div>
+                </div>
    </div>
+ 
+   

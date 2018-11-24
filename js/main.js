@@ -102,20 +102,45 @@ function getMovie(param){
      });   
 }
 
-function saveMovie(){
-    
+function saveMovie(){    
     // get data
     var params={'title':res['Title'],'imdbID':res['imdbID'],'genre':res['Genre']};
 	$.ajax({
-		dataType: "json",
+	  //dataType:"json",
+	    dataType: "",
 		url: "addtofav.php",
 		data: params
-	})
+			})
 	.done(function(data){
-		$('#msg_box').text(data['res']);
+		//$('#msg_box').text(data.slice(8,38));
+		if(data="Already liked"){
+		alert("Already liked");
+		}else{
+		$('#msg_box').text(data);
+		}
 	})
-	.fail(function() {
-		$('#msg_box').text("ajax error.");
+	.fail(function(jqXHR, exception) {
+		//$('#msg_box').text("ajax error.");
+		$('#msg_box').text(exception);
 	});
 }
+
+function deletemovie(r){
+
+		var i = r.parentNode.parentNode.rowIndex;
+		var title= document.getElementById("data-table").rows[i].cells[0].innerHTML;
+		console.log(title);
+		$.ajax({
+			url: 'deletefromfav.php',
+			data: {'title':title}
+			})
+		.done(function(data){
+			var i = r.parentNode.parentNode.rowIndex;
+			document.getElementById("data-table").deleteRow(i);
+		})
+		.fail(function(jqXHR, exception) {
+			console.log(exception);
+		});
+}
+
 
