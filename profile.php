@@ -4,7 +4,7 @@ require_once 'dbconnect.php';
 $uid=1;
 global $mysql;
 
-if (!($stmt = $mysql->prepare("select movtitle,genre from movie where userid=?"))) {
+if (!($stmt = $mysql->prepare("select movid,movtitle,genre from movie where userid=?"))) {
 //			 throw new Exception("Prepare failed: (" . $mysql->errno . ") " . $mysql->error);
 			 return false;
 		}
@@ -32,7 +32,7 @@ if (!($stmt = $mysql->prepare("select movtitle,genre from movie where userid=?")
       <div class="jumbotron">
          <h3 class="text-center">Your wishlist</h3>   
          <div class="table-responsive">  
-                     <table id="data-table">  
+                     <table id="data-table" class="table" align="center">  
                           <thead>  
                                <tr>  
                                     <td>Title</td>  
@@ -43,10 +43,11 @@ if (!($stmt = $mysql->prepare("select movtitle,genre from movie where userid=?")
                           {
             				$title = $row['movtitle'];
             				$genre = $row['genre'];
+            				$movid = $row['movid'];
             			  ?>
             				<tr>
-            				<td><?php echo $title; ?></td>
-            				<td><?php echo $genre; ?></td>
+            				<td align="left"><?php echo $title; ?></td>
+            				<td align="left"><?php echo $genre; ?></td>
             				<td><button class="btn btn-primary" onclick="deletemovie(this)">Delete</button></td>
             				</tr>
         				  <?php } ?> 
