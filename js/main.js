@@ -113,10 +113,12 @@ function saveMovie(){
 			})
 	.done(function(data){
 		//$('#msg_box').text(data.slice(8,38));
-		if(data="Already liked"){
-		alert("Already liked");
+		//$('#msg_box').text(data);
+		console.log(data);
+		if(data == "Already liked"){
+			$('#msg_box').text(data);
 		}else{
-		$('#msg_box').text(data);
+			$('#msg_box').text(data.slice(8,38));
 		}
 	})
 	.fail(function(jqXHR, exception) {
@@ -135,6 +137,7 @@ function deletemovie(r){
 			data: {'title':title}
 			})
 		.done(function(data){
+		    console.log(data);
 			var i = r.parentNode.parentNode.rowIndex;
 			document.getElementById("data-table").deleteRow(i);
 		})
