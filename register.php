@@ -72,7 +72,7 @@
    <!-- display validation errors here -->
       <div class="input-group">
          <label>Username</label>
-         <input type="text" name="username" placeholder="Enter username" value="">
+         <input type="text" name="username" placeholder="Enter username">
       </div>
       <div class="input-group">
          <label>Email</label>
@@ -95,7 +95,28 @@
     </form> 
     
 
-
+<script>
+var submitButton = $("#registerForm button[type='submit']").attr("disabled", true);
+$("#registerForm input").change(function () {
+                var valid = true;
+                $.each($("#registerForm input"), function (index, value) {
+                    if(!$(value).val()){
+                        console.log($(this))
+                        $(this).addClass('error');
+                        valid = false;
+                    }
+                    else{
+                        $(this).removeClass('error');
+                    }
+                });
+                if(valid){
+                    $(submitButton).attr("disabled", false);
+                } 
+                else{
+                    $(submitButton).attr("disabled", true);
+                }
+            });
+</script>
  
    
    
