@@ -4,7 +4,7 @@ require_once 'dbconnect.php';
 $uid=1;
 global $mysql;
 
-if (!($stmt = $mysql->prepare("select movid,movtitle,genre from movie where userid=?"))) {
+if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"))) {
 //			 throw new Exception("Prepare failed: (" . $mysql->errno . ") " . $mysql->error);
 			 return false;
 		}
@@ -41,9 +41,9 @@ if (!($stmt = $mysql->prepare("select movid,movtitle,genre from movie where user
                           </thead> 
                           <?php while($row = $result->fetch_assoc()) 
                           {
-            				$title = $row['movtitle'];
+            				$title = $row['title'];
             				$genre = $row['genre'];
-            				$movid = $row['movid'];
+            				$movid = $row['id'];
             			  ?>
             				<tr>
             				<td align="left"><?php echo $title; ?></td>

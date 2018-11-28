@@ -9,7 +9,7 @@ $genre=$_REQUEST['genre'];
 $title=$_REQUEST['title'];
 $uid=1;
 //check if movie already exists in database
-if (!($stmt = $mysql->prepare("select movid from movie where userid=? AND movid=?"))) {
+if (!($stmt = $mysql->prepare("select id from movie where user_id=? AND id=?"))) {
 //			 throw new Exception("Prepare failed: (" . $mysql->errno . ") " . $mysql->error);
 			 return false;
 		}

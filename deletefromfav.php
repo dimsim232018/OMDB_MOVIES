@@ -10,7 +10,7 @@ $uid=1;
 
 //must check if movie already exists in database
 
-$sql = "DELETE FROM movie where userid = $uid AND movtitle = '$title'";
+$sql = "DELETE FROM movie where user_id = $uid AND title = '$title'";
 
 if ($mysql->query($sql) === TRUE) {
     echo json_encode(['res'=>'Successfully deleted']);
