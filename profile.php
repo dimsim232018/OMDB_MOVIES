@@ -27,33 +27,40 @@ if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"
    <script src="js/axios.min.js"></script>
    <script src="js/main.js"></script> 
 
-<br>
- <div class="container">
-      <div class="jumbotron">
-         <h3 class="text-center">Your wishlist</h3>   
-         <div class="table-responsive">  
-                     <table id="data-table" class="table" align="center">  
-                          <thead>  
-                               <tr>  
-                                    <td>Title</td>  
-                                    <td>Genre</td>   
-                               </tr>  
-                          </thead> 
+<body style="background-color:black"> 
+
+<div class="jumbotron" id="wishlist" style=""> 
+	<h3 style="text-align:center;color:white"> My Profile </h5>
+</div>
+
+	<div class="jumbotron" id="wishlist"> 
+		<h5 style="text-align:right; position:relative; right:60px;color:white">My wishlist</h3>
+		<!--       <div class="table-responsive">  -->
+          	<table class="table table-dark table-hover bg-dark" id="data-table" style="color:lightgray">  
+				<thead>
+					<tr class="table-no-border" style="border-radius:15px 15px 0px 0px;font-weight:bold;border-bottom:2px solid;border-color:lightgray">  
+                              <td>Title</td>  
+						<td>Genre</td>
+						<td></td>   
+               		</tr>  
+				</thead>
                           <?php while($row = $result->fetch_assoc()) 
                           {
             				$title = $row['title'];
             				$genre = $row['genre'];
             				$movid = $row['id'];
             			  ?>
-            				<tr>
-            				<td align="left"><?php echo $title; ?></td>
-            				<td align="left"><?php echo $genre; ?></td>
-            				<td><button class="btn btn-primary" onclick="deletemovie(this)">Delete</button></td>
-            				</tr>
-        				  <?php } ?> 
-                      </table>  
-           </div>
-                </div>
-   </div>
+            			<tr>
+            				<td style="align-text:center"><?php echo $title; ?></td>
+            				<td style="align-txt:center"><?php echo $genre; ?></td>
+            				<td><button class="btn btn-info" onclick="deletemovie(this)">Delete</button></td>
+            			</tr>
+					   
+					<?php } ?> 
+               </table>  
+     <!--     </div>  -->
+ </div> 
+
+</body>
  
    

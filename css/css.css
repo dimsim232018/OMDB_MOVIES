@@ -7,7 +7,7 @@
 	top:50px;
 	margin-left:20%;
 	margin-right:20%;
-	background-color: rgb(20, 20, 20);
+	background-color: #343a40;
 	color: lightgray;
 	text-align: center; 
 	border-radius: 10px;
@@ -80,6 +80,36 @@
 	left:2px;
 
 }
+
+/*-----------*/
+/*Profile.php*/
+/*-----------*/
+
+#wishlist {
+
+	position:relative;
+	top:50px;
+	margin-left:20%;
+	margin-right:20%;
+	background-color: #343a40;
+	text-align: center;
+	color:lightgray;
+
+}
+
+table.table-dark.table-hover {
+
+	position:relative;
+	border-radius:15px;
+	align-text:center;
+		
+}
+
+.table > thead > tr:first-child > td, 
+.table > tbody > tr:first-child > td {
+    border: none;
+}
+
 
 
 /*------------------*/
