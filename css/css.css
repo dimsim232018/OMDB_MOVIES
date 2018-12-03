@@ -1,4 +1,66 @@
-﻿
+﻿/*----------*/
+/*Header.php*/
+/*----------*/
+
+#header_jumbo{
+	background-image: url(/webeng3/media/cine2.jpg);
+    background-position:center;
+    background-size:cover;
+    border-radius:0px;
+    margin-bottom: 0px!important;
+}
+
+#primary_title{
+	text-align:center;
+}
+
+#secondary_title{
+	text-align:center;
+	color:white;
+}
+
+.blockquote-footer {
+	text-align:right;
+	color:white;
+	position:relative;
+	top: 50px;
+}
+
+#main_dropdown_button{
+	text-align: center;
+	font-weight: bold;
+}
+
+.dropdown-item{
+	text-align: center;
+}
+
+
+/*---------*/
+/*Index.php*/
+/*---------*/
+
+#search_jumbo{
+	position:relative;
+	top:50px;
+	margin-left:20%;
+	margin-right:20%;
+	background-color: transparent;
+	color:grey;
+}
+
+#searchText {
+	text-align:center;
+	border-color:#ffbb33;
+	border-radius:10px;
+	border-width:3px;
+}
+
+/*------------------*/
+/* YE OLDE SETTINGS */
+/*------------------*/
+/*
+
 #movies img, #movie img {
 	width:50%
 }	
@@ -18,7 +80,7 @@
 	   padding:0px;
 	}
 	
-
+*/
 
 /*body{
 	
@@ -41,7 +103,7 @@
 }
 
 */
-
+/*
 .input-group{
 	
 	margin:10px 0px 10px 0px;
@@ -98,3 +160,4 @@
 	text-align:left;
 }
 
+*/

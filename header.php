@@ -8,19 +8,22 @@
 
     <!--Bootstrap CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-   
+    <link rel="stylesheet" href="css/css.css">
+
     <title>WatchMyMovie</title>
 
 </head>
 
     <?php include 'session.php'; ?>
 
-    <div class="jumbotron" style="background-image: url(/webeng3/media/cine2.jpg); background-position:center; background-size:cover; border-radius:0px; margin-bottom: 0px!important">
-        <h1 class="display-2 text-warning font-weight-bold" style="text-align:center">WatchMyMovie</h1>  
-        <p class="font-weight-bold" style="text-align:center; color:white">Powered by the OMDB API</p> 
-        <footer class="blockquote-footer font-italic" style="text-align:right; color:white;">"Congratulations...", Agent Smith</footer>
-        <footer class="blockquote-footer font-italic" style="text-align:right; color:white">"Maximum effort!", Mr. Pool</footer>
-        <footer class="blockquote-footer font-italic" style="text-align:right; color:white">"Εσύ τι φάση?", Σοφία</footer>
+    <div class="jumbotron" id="header_jumbo">
+        <a href="index.php">
+            <h1 class="display-2 text-warning font-weight-bold" id="primary_title">WatchMyMovie</h1>
+        </a>  
+        <p class="font-weight-bold" id="secondary_title">Powered by the OMDB API</p> 
+        <footer class="blockquote-footer font-italic">"Congratulations...", Agent Smith</footer>
+        <footer class="blockquote-footer font-italic">"Maximum effort!", Mr. Pool</footer>
+        <footer class="blockquote-footer font-italic">"Εσύ τι φάση?", Σοφία</footer>
     </div>
 
 
@@ -28,26 +31,26 @@
     <nav class="navbar bg-dark navbar-dark">
 
         <div class="dropdown">
-                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"></button>
+                <button type="button" class="btn btn-warning dropdown-toggle" id="main_dropdown_button" data-toggle="dropdown">Menu</button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="http://www.omdbapi.com/" target="_blank" style="text-align:center">OMDb API</a>
-                    <a class="dropdown-item" href="about.php" style="text-align:center">About us</a>
+                    <a class="dropdown-item" href="index.php">Movie Search</a>
+                    <div class="dropdown-divider"></div> 
+                    <a class="dropdown-item" href="http://www.omdbapi.com/" target="_blank">OMDb API</a>
+                    <a class="dropdown-item" href="about.php">About us</a>
                 </div>
         </div>
-
-        <a class="navbar-brand" href="index.php" style="position:relative; left:10px">WatchMyMovie</a>
 
         <ul class="navbar-nav ml-auto">                
            <?php if (!isset($username)){?>
                     <li>
-                        <a class="btn btn-warning font-weight-bold" href="login.php"><?php echo 'Login';?></a>
+                        <a class="btn btn-success font-weight-bold" href="login.php"><?php echo 'Login';?></a>
                     </li>
                 <?php }else{?>
                     <li>
-                        <a class="btn btn-warning font-weight-bold" href="logout.php"><?php echo 'Logout';?></a>
+                        <a class="btn btn-success font-weight-bold" href="logout.php"><?php echo 'Logout';?></a>
                     </li>
                     <li>
-                        <a class="btn btn-warning font-weight-bold" href="profile.php"><?php echo 'MyProfile';?></a>
+                        <a class="btn btn-success font-weight-bold" href="profile.php"><?php echo 'MyProfile';?></a>
                     </li>
                 <?php };?>  
             </li>
