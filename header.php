@@ -39,10 +39,16 @@
 
         <ul class="navbar-nav ml-auto">                
            <?php if (!isset($username)){?>
-                    <li class="btn btn-warning font-weight-bold" href="login.php"><?php echo 'Login';?></li>
+                    <li>
+                        <a class="btn btn-warning font-weight-bold" href="login.php"><?php echo 'Login';?></a>
+                    </li>
                 <?php }else{?>
-                    <li class="btn btn-warning font-weight-bold" href="logout.php"><?php echo 'Logout';?></li>
-                    <li class="btn btn-warning font-weight-bold" href="profile.php"><?php echo 'MyProfile';?></li>
+                    <li>
+                        <a class="btn btn-warning font-weight-bold" href="logout.php"><?php echo 'Logout';?></a>
+                    </li>
+                    <li>
+                        <a class="btn btn-warning font-weight-bold" href="profile.php"><?php echo 'MyProfile';?></a>
+                    </li>
                 <?php };?>  
             </li>
         </ul>
