@@ -15,7 +15,7 @@
 
     <?php include 'session.php'; ?>
 
-    <div class="jumbotron" style="background-image: url(/media/cine2.jpg); background-position:center; background-size:cover; border-radius:0px; margin-bottom: 0px!important">
+    <div class="jumbotron" style="background-image: url(/webeng3/media/cine2.jpg); background-position:center; background-size:cover; border-radius:0px; margin-bottom: 0px!important">
         <h1 class="display-2 text-warning font-weight-bold" style="text-align:center">WatchMyMovie</h1>  
         <p class="font-weight-bold" style="text-align:center; color:white">Powered by the OMDB API</p> 
         <footer class="blockquote-footer font-italic" style="text-align:right; color:white;">"Congratulations...", Agent Smith</footer>
