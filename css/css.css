@@ -1,4 +1,19 @@
-﻿/*----------*/
+﻿/*-------*/
+/*Globals*/
+/*-------*/
+
+.jumbotron.form {
+	position:relative;
+	top:50px;
+	margin-left:20%;
+	margin-right:20%;
+	background-color: rgb(20, 20, 20);
+	color: lightgray;
+	text-align: center; 
+	border-radius: 10px;
+}
+
+/*----------*/
 /*Header.php*/
 /*----------*/
 
@@ -40,14 +55,6 @@
 /*Index.php*/
 /*---------*/
 
-#search_jumbo{
-	position:relative;
-	top:50px;
-	margin-left:20%;
-	margin-right:20%;
-	background-color: transparent;
-	color:grey;
-}
 
 #searchText {
 	text-align:center;
@@ -55,6 +62,25 @@
 	border-radius:10px;
 	border-width:3px;
 }
+
+
+/*---------*/
+/*Login.php*/
+/*---------*/
+
+#login_footer {
+	position:relative;
+	text-align:center;
+	top:30px;
+}
+
+#login_box2 {
+
+	position:relative;
+	left:2px;
+
+}
+
 
 /*------------------*/
 /* YE OLDE SETTINGS */

@@ -7,7 +7,7 @@
 <html>
    <body style="background-color:black">
      
-         <div class="jumbotron" id="search_jumbo">
+         <div class="jumbotron form">
             <h3 class="text-center" style="margin-bottom:50px">Αναζήτηση ταινίας</h3>
             <form id="searchForm">
                <input type="text" class="form-control" id="searchText"  placeholder="Please enter a movie title and let the magic happen...">

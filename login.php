@@ -53,41 +53,45 @@
 		}
 	}
 ?>
-    
-   <div class="header">
-      <h2>Login</h2>
-   </div> 
-      <script src="js/jquery-3.3.1.min.js"</script>
-   <script>
+  <body style="background-color:black">
+	
+  <div class="jumbotron form">
+		<div class="header" id="login_header">
+			<h2>Login</h2>
+		</div>
+	
+	
+	<script src="js/jquery-3.3.1.min.js"></script>
+	
+	<script>
 		function submitForm(e){
 			e.preventDefault();
 			$("#loginForm").submit();
 		}
 	</script>
-   <form method="post" action="#" name="login" id="loginForm" class="form">
-      <div class="input-group">
-         <label>Username</label>
-         <input type="text" name="username" placeholder="Enter your username" value="">   
-      </div>
+
+  	<form method="post" action="#" name="login" id="loginForm" class="form">
+			<br>
+         <label>Username: </label>
+         <input id="login_box1" type="text" name="username" placeholder="Enter your username" value=""  style="position:relative; margin-left:20px">   
+			<br>
+			<label>Password: </label>
+         <input id="login_box2" type="password" name="password" placeholder="Enter your password" style="position:relative; margin-left:20px">   
+			<br>
+			<br>
+         <button type="submit" name="login" class="btn btn-success" onclick="submitForm(event)">Login</button>
      
-      <div class="input-group">
-         <label>Password</label>
-         <input type="password" name="password" placeholder="Enter your password">   
-      </div>
-      
-      <div class="input-group">
-         <button type="submit" name="login" class="btn btn-primary" onclick="submitForm(event)">Login</button>
-      </div>
-      <p>
-         Not yet a member?<a href="register.php">&nbsp;&nbsp;Sing up</a>
-      </p>
-    </form> 
-       
-   
+      <footer class="footer" id="login_footer">
+			<p>
+				Not a member yet...?<a href="register.php">&nbsp;&nbsp;Sign up</a> now!
+			</p>
+		</footer>
+	 </form> 
    
    <script src="js/axios.min.js"></script>
-   <script src="js/main.js"></script> 
-   	  
+	<script src="js/main.js"></script> 	
+	
+</div>    	  
 </body>
 
 </html>
