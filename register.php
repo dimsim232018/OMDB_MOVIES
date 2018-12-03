@@ -37,7 +37,7 @@
             <br>
             <br>
          
-            <button type="submit" name="register" class="btn btn-primary">Register</button> 
+            <button type="submit" name="register" class="btn btn-success">Register</button> 
             <!-- <input type="submit" name="register" class="btn btn-primary">-->
 
             <footer class="footer" id="register_footer">
