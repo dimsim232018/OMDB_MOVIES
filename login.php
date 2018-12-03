@@ -73,10 +73,10 @@
   	<form method="post" action="#" name="login" id="loginForm" class="form">
 			<br>
          <label>Username: </label>
-         <input id="login_box1" type="text" name="username" placeholder="Enter your username" value=""  style="position:relative; margin-left:20px">   
+         <input id="login_box1" type="text" name="username" placeholder="Enter your username" value="">   
 			<br>
 			<label>Password: </label>
-         <input id="login_box2" type="password" name="password" placeholder="Enter your password" style="position:relative; margin-left:20px">   
+         <input id="login_box2" type="password" name="password" placeholder="Enter your password" >   
 			<br>
 			<br>
          <button type="submit" name="login" class="btn btn-success" onclick="submitForm(event)">Login</button>
