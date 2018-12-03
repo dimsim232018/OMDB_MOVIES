@@ -1,4 +1,5 @@
-﻿#movies img, #movie img {
+﻿
+#movies img, #movie img {
 	width:50%
 }	
 @media(min-width:960px){
@@ -17,12 +18,14 @@
 	   padding:0px;
 	}
 	
+
+
 /*body{
 	
 	font-size:120%;
 	background:#f8f8ff;
 }	
-*/
+
 .header{
 	
 	width:30%;
@@ -36,6 +39,8 @@
 	padding:20px;
 	
 }
+
+*/
 
 .input-group{
 	
@@ -92,3 +97,4 @@
 	border-radius: 5px;
 	text-align:left;
 }
+
