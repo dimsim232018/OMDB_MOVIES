@@ -2,41 +2,54 @@
 
  include 'header.php';
 ?> 
+
     <script src="js/jquery-3.3.1.min.js" ></script>
 
- 
-		
-   <div class="header">
-      <h2>Register</h2>
-   </div> 
-   <form method="post" action="#" class="form" id="registerForm">
-   <!-- display validation errors here -->
-      <div class="input-group">
-         <label>Username</label>
-         <input type="text" name="username" placeholder="Enter username">
-      </div>
-      <div class="input-group">
-         <label>Email</label>
-         <input type="text" name="email" placeholder="Enter email" value="">
-      </div>
-      <div class="input-group">
-         <label>Password</label>
-         <input type="password" name="password_1" placeholder="Enter password">   
-      </div>
-      <div class="input-group">
-         <label>Confirm Password</label>
-         <input type="password" name="password_2" placeholder="Confirm password">   
-      </div>
-      <div class="input-group">
-        <button type="submit" name="register" class="btn btn-primary">Register</button> 
-        <!-- <input type="submit" name="register" class="btn btn-primary">-->
-      </div>
-      <p>
-         Already a member?<a href="login.php">&nbsp;&nbsp;Sing in</a>
-      </p>
-      <div id="msg_box"></div>
-    </form> 
+    <body style="background:black">
+
+    <div class="jumbotron form" >
+
+        <div class="header" id="register_header">
+            <h2>Register</h2>
+        </div> 
+   
+        <form method="post" action="#" class="form" id="registerForm">
+   
+        <!-- Display validation errors here -->
+        
+            <label>Username:</label>
+            <input class="register_box" id="rb1" type="text" name="username" placeholder="Enter username">
+            <br>
+
+        
+            <label>Email:</label>
+            <input class="register_box" id="rb2" type="text" name="email" placeholder="Enter email" value="">
+            <br>
+
+         
+            <label>Password:</label>
+            <input class="register_box" id="rb3" type="password" name="password_1" placeholder="Enter password">   
+            <br>
+
+        
+            <label>Confirm Password:</label>
+            <input class="register_box" id="rb4" type="password" name="password_2" placeholder="Confirm password">   
+            <br>
+            <br>
+         
+            <button type="submit" name="register" class="btn btn-primary">Register</button> 
+            <!-- <input type="submit" name="register" class="btn btn-primary">-->
+
+            <footer class="footer" id="register_footer">
+			    <p>
+                    Already a member...?&nbsp;&nbsp;<a href="login.php">Sign in!</a>
+                </p>
+            </footer>
+        
+            <div id="msg_box"></div>
     
+        </form> 
+    </div>
 
 <script>
 //var submitButton = $("#registerForm button[type='submit']").attr("disabled", true);

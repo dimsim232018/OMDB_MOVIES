@@ -110,6 +110,39 @@ table.table-dark.table-hover {
     border: none;
 }
 
+/*-----------*/
+/*Register.php*/
+/*-----------*/
+
+#register_header {
+	position:relative;
+	bottom:20px;
+}
+
+.register_box {
+	position:relative;
+	left: 30px;
+}
+
+#rb2 {
+	left:46px!important;
+}
+
+#rb3 {
+	left:32px!important;
+}
+
+#rb4 {
+	position:relative;
+	left:1px!important;
+}
+
+#register_footer {
+	position:relative;
+	text-align:center;
+	top:30px;
+}
+
 
 
 /*------------------*/
