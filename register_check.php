@@ -4,20 +4,22 @@ include 'session.php';
  function register($username,$password_1,$password_2,$email){
      global $mysql;
       $msg="";
+      $username=trim($username);
       $username = mysqli_real_escape_string($mysql,$_POST['username']);
       $username_san = filter_var($username, FILTER_SANITIZE_STRING);
-      if (strcmp($username,$username_san)){
-          $msg.="Invalid username.";
+      //$msg.=$username."  ".$username_san;
+      if (strcmp($username,$username_san)!=0){
+          $msg.= "Invalid username.";
       }
       $email = mysqli_real_escape_string($mysql,$_POST['email']);
       $password_1 = mysqli_real_escape_string($mysql,$_POST['password_1']);
       $password_1_san = filter_var($password_1, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
-      if (strcmp($password_1,$password_1_san)){
+      if (strcmp($password_1,$password_1_san)!=0){
           $msg.="Invalid password.";
       }
       $password_2 = mysqli_real_escape_string($mysql,$_POST['password_2']);
       $password_2_san = filter_var($password_2, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
-      if (strcmp($password_2,$password_2_san)){
+      if (strcmp($password_2,$password_2_san)!=0){
           $msg.="Invalid password.";
       }      
       
