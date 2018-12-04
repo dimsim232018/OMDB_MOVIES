@@ -8,6 +8,11 @@
 	
 	function login($username,$password){
 		global $mysql;
+		$username = mysqli_real_escape_string($mysql,$username);
+                $username_san = filter_var($username, FILTER_SANITIZE_STRING);
+		if (!strcmp($username,$username_san)){
+                     return false;
+                }
 		//prepare
         $password = md5($password);
 		if (!($stmt = $mysql->prepare("select id, username from user where username=? and password=?"))) {
