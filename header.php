@@ -22,9 +22,8 @@
     </a>  
     
     <p class="font-weight-bold" id="secondary_title">Powered by the OMDB API</p> 
-    <footer class="blockquote-footer font-italic">"Congratulations...", Agent Smith</footer>
-    <footer class="blockquote-footer font-italic">"Maximum effort!", Mr. Pool</footer>
-    <footer class="blockquote-footer font-italic">"Εσύ τι φάση?", Σοφία</footer>
+    <footer class="blockquote-footer font-italic">"Congratulations...", Agent Smith - The Matrix</footer>
+
 </div>
 
 <!--Nav menu-->

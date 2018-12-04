@@ -12,7 +12,7 @@
         <h3 class="text-center">Η ομάδα μας:</h3>
         <br>
         <ul class="list-inline justify-content-center">
-            <li class="list-inline-item">Front/Back End Developer, Project Leader</li><br>
+            <li class="list-inline-item">Δήμητρα Σιμορέλη - Front/Back End Developer, Project Leader</li><br>
             <li class="list-inline-item">Σοφία ρίζου - Front/Back End Developer</li><br>
             <li class="list-inline-item">Ji Chenyang - Back End Developer</li><br>
             <li class="list-inline-item">Δημήτρης Καμπάς - UI/UX Developer</li><br>
