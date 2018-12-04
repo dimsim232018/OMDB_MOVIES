@@ -49,7 +49,7 @@ include 'session.php';
          $password = md5($password_1); //encrypt password before storing in database(security)
 	$stmt = $mysql->prepare("INSERT INTO user (username,email,password) 
                    VALUES (?,?,?)";
-	$stmt->bind_param("sss", $username,$email,$password));
+	$stmt->bind_param("sss", $username,$email,$password);
 	 $stmt->execute();
 	 
         $stmt->store_result();
