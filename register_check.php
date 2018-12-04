@@ -47,10 +47,15 @@ include 'session.php';
       // if there are no errors , save user to database
      
          $password = md5($password_1); //encrypt password before storing in database(security)
-         $sql = "INSERT INTO user (username,email,password) 
-                   VALUES ('$username','$email','$password')";
-         mysqli_query($mysql,$sql);         
+	$stmt = $mysql->prepare("INSERT INTO user (username,email,password) 
+                   VALUES (?,?,?)";
+	$stmt->bind_param("sss", $username,$email,$password));
+	 $stmt->execute();
+	 
+        $stmt->store_result();
+	 if ($stmt->num_rows > 0){
          return true;
+	 }
         } 
         
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
