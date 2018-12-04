@@ -6,9 +6,21 @@ include 'session.php';
 
       $msg="";
       $username = mysqli_real_escape_string($mysql,$_POST['username']);
+      $username_san = filter_var($username, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+      if (strcmp($username,$username_san)){
+          $msg.="Invalid username.";
+      }
       $email = mysqli_real_escape_string($mysql,$_POST['email']);
       $password_1 = mysqli_real_escape_string($mysql,$_POST['password_1']);
+      $password_1_san = filter_var($password_1, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH)
+      if (strcmp($password_1,$password_1_san)){
+          $msg.="Invalid password.";
+      }
       $password_2 = mysqli_real_escape_string($mysql,$_POST['password_2']);
+      $password_2_san = filter_var($password_2, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH)
+      if (strcmp($password_2,$password_2_san)){
+          $msg.="Invalid password.";
+      }      
       
       // ensure that form fields are filled properly
    
