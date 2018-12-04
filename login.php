@@ -8,8 +8,18 @@
 	
 	function login($username,$password){
 		global $mysql;
+		$username = mysqli_real_escape_string($mysql,$username);
+                $username_san = filter_var($username, FILTER_SANITIZE_STRING);
+		$password = mysqli_real_escape_string($mysql,$password);
+                $password_san = filter_var($password, FILTER_SANITIZE_STRING);
+		if (strcmp($username,$username_san)!=0){
+                     return false;
+                }
+		if (strcmp($password,$password_san)!=0){
+                     return false;
+                } 
 		//prepare
-        $password = md5($password);
+                 $password = md5($password);
 		if (!($stmt = $mysql->prepare("select id, username from user where username=? and password=?"))) {
 //			 throw new Exception("Prepare failed: (" . $mysql->errno . ") " . $mysql->error);
 			 return false;
