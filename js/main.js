@@ -1,8 +1,9 @@
-﻿var res;
+var res;
 
 $(document).ready(()=> {
 	$('#searchForm').on('submit', (e)=> {
 	  let searchText=$('#searchText').val();
+	  sessionStorage.setItem('searchText',searchText);
       getMovies(searchText);
       e.preventDefault();
    });   
@@ -15,8 +16,17 @@ function getMovies(searchText){
    
       .then((response)=> {
          console.log(response);
+		 let output=' ';
+		 if (response.data.Response=="False"){
+			 output =`
+			   <div class="col-md-3">
+                  <div class="well text-center">
+				  <p style="color:#fff;">No results.</p>
+				  </div>
+			</div>`
+		 }
+		 else{
          let movies = response.data.Search;
-         let output=' ';
          $.each(movies, (index, movie) => {
             output +=`
                
@@ -30,7 +40,7 @@ function getMovies(searchText){
 			   
             `;   
          });
-         
+         }
          $('#movies').html(output);  
       })
       .catch((err)=> {
@@ -77,7 +87,9 @@ function getMovie(param){
 		      ${movie.Plot} &nbsp;&nbsp;&nbsp; 
 			 <a href="https://www.imdb.com/title/${movie.imdbID}/" target="_blank" class="btn btn-primary">View IMDB</a>
 			 &nbsp;&nbsp;&nbsp;&nbsp;
-			  <a href="index.php" class="btn btn-primary">Επιστροφή...</a>&nbsp;&nbsp;&nbsp;&nbsp;`;
+			  <a href="index.php?search=`;
+			  output+=sessionStorage.getItem('searchText');
+			  output+=`" class="btn btn-primary">Επιστροφή...</a>&nbsp;&nbsp;&nbsp;&nbsp;`;
               if (param){
          
                   output+=`<button id="" class="btn btn-primary" onclick="saveMovie()">Προσθήκη στην λίστα</button></div></div>`
