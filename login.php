@@ -1,6 +1,5 @@
 <?php 
       include 'header.php'; 
-      include 'session.php'; 
       require_once 'dbconnect.php';
 // already logged in
 	if (isset($uid)){
