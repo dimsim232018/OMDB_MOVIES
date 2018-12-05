@@ -144,6 +144,46 @@ table.table-dark.table-hover {
 }
 
 
+/*--------------*/
+/*Wishlist table*/
+/*--------------*/
+
+#data-table_wrapper .btn{
+	background-color: #ffbb33!important;
+	color:black;	
+	border-color:#ffbb33;
+}
+
+#data-table_wrapper.dataTables_wrapper.no-footer table#data-table.table.bg-dark.dataTable.no-footer tbody tr.even{
+	background-color:rgb(20,20,20);
+	color:white;	
+	border-color:grey;
+}
+
+#data-table_wrapper.dataTables_wrapper.no-footer table#data-table.table.bg-dark.dataTable.no-footer tbody tr.odd {
+	background-color: rgb(40, 40, 40);
+	color:white;
+	border-color: rgb(40, 40, 40);
+}
+
+
+#data-table_wrapper.dataTables_wrapper.no-footer div#data-table_length.dataTables_length {
+	color: grey;
+	position:relative;
+	top:3px;
+}
+
+#data-table_wrapper.dataTables_wrapper.no-footer div#data-table_filter.dataTables_filter {
+	color:grey;
+}
+
+#data-table_wrapper.dataTables_wrapper.no-footer table#data-table.table.bg-dark.dataTable.no-footer thead tr.table-no-border {
+	color:grey;
+}
+
+#data-table_wrapper.dataTables_wrapper.no-footer div#data-table_info.dataTables_info {
+	color:grey;
+}
 
 /*------------------*/
 /* YE OLDE SETTINGS */

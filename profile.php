@@ -33,7 +33,7 @@ if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"
 <!-- DATA TABES SCRIPT -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-<script type="text/javascript">
+<script type="text/javascript" >
    $(function() {
     $("#data-table").dataTable({
         "iDisplayLength": 10,
@@ -50,9 +50,10 @@ if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"
 </div>
 
 	<div class="jumbotron" id="wishlist"> 
-		<h5 style="text-align:right; position:relative; right:60px;color:white">My wishlist</h3>
+		<h4 style="text-align:center; position:relative;color:white">My wishlist</h3>
+		<br>
 		<!--       <div class="table-responsive">  -->
-          	<table class="table table-dark table-hover bg-dark" id="data-table" style="color:lightgray">  
+          	<table class="table bg-dark" id="data-table" style="color:black">  
 				<thead>
 					<tr class="table-no-border" style="border-radius:15px 15px 0px 0px;font-weight:bold;border-bottom:2px solid;border-color:lightgray">  
                               <td>Title</td>  
