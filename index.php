@@ -9,7 +9,9 @@ $url=$_SERVER['QUERY_STRING'];
 
 <html>
    <body style="background-color:black">
-      <div id="welcome" style="color:#fff;"><?php if (strcmp($url,'origin=register')==0) {echo "You are now logged in!"; } else if (strcmp($url,'origin=logout')==0) {echo "You are now logged out!"; } ?></div>
+      <div id="welcome" style="color:#fff;">
+         <?php if (strcmp($url,'origin=register')==0) {echo "<script>alert('Thank you for registering... You are now logged in!');</script>";} else if (strcmp($url,'origin=logout')==0) {echo "<script>alert ('You are now logged out!');</script>";} else {echo "<script>alert ('Welcome!');</script>"; }  ?>
+      </div>
          <div class="jumbotron form">
             <h3 class="text-center" style="margin-bottom:50px">Αναζήτηση ταινίας</h3>
             <form id="searchForm">
