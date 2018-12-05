@@ -1,9 +1,10 @@
 <?php
 require_once 'dbconnect.php';
 include 'session.php'; 
+      $msg="";
  function register($username,$password_1,$password_2,$email){
      global $mysql;
-      $msg="";
+	global $msg;
       $username=trim($username);
       $username = mysqli_real_escape_string($mysql,$_POST['username']);
       $username_san = filter_var($username, FILTER_SANITIZE_STRING);
@@ -43,22 +44,25 @@ include 'session.php';
      } 
       
       if ($msg!=''){
-          echo json_encode(['error'=>$msg]);
           return false;
       }
       // if there are no errors , save user to database
-     
+	  //must check if password and username exists already
          $password = md5($password_1); //encrypt password before storing in database(security)
 	$stmt = $mysql->prepare("INSERT INTO user (username,email,password) 
                    VALUES (?,?,?)");
+		
 	$stmt->bind_param("sss", $username,$email,$password);
-	 $stmt->execute();
-	 
-        $stmt->store_result();
-	 if ($stmt->num_rows > 0){
-         return true;
-	 }
-        } 
+	
+	if ($stmt->execute()) {
+		$_SESSION["uid"]=$stmt->insert_id;
+		$_SESSION["username"]=$username;
+		$mysql->close();
+		return true;
+	} 
+	return false;
+   
+} 
         
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 $username=$_REQUEST['username'];
@@ -67,47 +71,15 @@ $password_2=$_REQUEST['password_2'];
 $email=$_REQUEST['email'];
 $_SESSION['success'] = "You are now logged in";
 if (register($username,$password_1,$password_2,$email)){
-        if (fetchUserId($username)){
             echo json_encode(['status'=>'You are now logged in.']);
         }
-    }
+		else {
+			echo json_encode(['error'=>$msg]);
+		}
 }
          
    
- function fetchUserId($username)  {
-     global $mysql;
-     if (!($stmt = $mysql->prepare("select id from user where username=?"))) {
-//			 throw new Exception("Prepare failed: (" . $mysql->errno . ") " . $mysql->error);
-			 return false;
-		}
-		// bind params
-		if (!$stmt->bind_param("s", $username)) {
-//			throw new Exception("Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error);
-			 return false;
-		}
-		// execute 
-		if (!$stmt->execute()) {
-			throw new Exception("Execute failed: (" . $stmt->errno . ") " . $stmt->error);
-			 return false;
-		}
-		
-		$stmt->store_result();
-		
-		if ($stmt->num_rows > 0){
-			// user found
-			$stmt->bind_result($uname);
-			$result = $stmt->get_result();
-            #$res_uid=$result->fetch_assoc();
-            $uid=$result['id'];
-			$stmt->free_result();
-			$stmt->close();
-			// store session variables
-			$_SESSION["uid"]=$uid;
-			$_SESSION["username"]=$username;
-            //header('Location: index.php');
-			return true;
-        }
- }
+
   
  
  ?>
