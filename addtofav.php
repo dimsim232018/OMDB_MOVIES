@@ -9,6 +9,7 @@ $genre=$_REQUEST['genre'];
 $title=$_REQUEST['title'];
 //$uid=1;
 //check if movie already exists in database
+//it produces error when movie exists in table. must be fixed
 if (!($stmt = $mysql->prepare("select id from movie where user_id=? AND id=?"))) {
 //			 throw new Exception("Prepare failed: (" . $mysql->errno . ") " . $mysql->error);
 			 return false;
