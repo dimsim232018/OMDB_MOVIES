@@ -18,13 +18,17 @@ function getMovies(searchText){
          console.log(response);
 		 let output=' ';
 		 if (response.data.Response=="False"){
-			 output =`
-			   <div class="col-md-3">
-                  <div class="well text-center">
-				  <p style="color:#fff;">No results.</p>
-				  </div>
-			</div>`
-		 }
+
+			alert('No results... Please try again!');}
+
+			/* output =`
+			   <div class="jumbotron" id="no_results">
+					<p style="color:#fff;">No results!</p>
+				</div>
+			`
+			 }*/
+
+
 		 else{
          let movies = response.data.Search;
          $.each(movies, (index, movie) => {
