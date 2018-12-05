@@ -28,6 +28,20 @@ if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"
    <script src="js/jquery-3.3.1.min.js" ></script>
    <script src="js/axios.min.js"></script>
    <script src="js/main.js"></script> 
+   <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- DATA TABES SCRIPT -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+   $(function() {
+    $("#data-table").dataTable({
+        "iDisplayLength": 10,
+        "aLengthMenu": [[10, 25, 50, 100,  -1], [10, 25, 50, 100, "All"]]
+       });
+   });
+  </script>
+  
 
 <body style="background-color:black"> 
 
