@@ -21,16 +21,23 @@ $url=$_SERVER['QUERY_STRING'];
          <div id="movies" class="row">
       </div>
 	  </div>
+
+   <script src="js/axios.min.js"></script>
+   <script src="js/main.js"></script> 
    <script>
    setTimeout(fade_out, 5000);
 
 	function fade_out() {
 		$("#welcome").fadeOut().empty();
 	}
+	var url="<?php echo $url;?>";
+	if (url.includes('search')){
+		var param_splited=url.split("=");
+		var searchText=param_splited[1];
+		console.log(searchText);
+		getMovies(searchText);
+	}
    </script>
-   <script src="js/axios.min.js"></script>
-   <script src="js/main.js"></script> 
-
    </body>
 
 </html>
