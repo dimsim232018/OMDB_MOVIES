@@ -1,6 +1,5 @@
 <?php
 include 'header.php'; 
-include 'session.php';
 require_once 'dbconnect.php';
 
 global $mysql;
