@@ -1,7 +1,8 @@
 <?php
 include 'header.php'; 
+include 'session.php'; 
 require_once 'dbconnect.php';
-$uid=1;
+//$uid=1;
 global $mysql;
 
 if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"))) {
