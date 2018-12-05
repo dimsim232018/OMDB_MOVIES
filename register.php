@@ -89,7 +89,7 @@ $("#registerForm").submit(function(e){
                          $('#msg_box').text(data['error']);
                     }
                     else if (data['status']){
-                         window.location.replace('index.php');
+                         window.location.replace('index.php?origin=register');
                     }
                     
                 })
