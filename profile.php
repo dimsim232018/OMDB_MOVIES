@@ -2,7 +2,7 @@
 include 'header.php'; 
 include 'session.php'; 
 require_once 'dbconnect.php';
-//$uid=1;
+
 global $mysql;
 
 if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"))) {
@@ -24,6 +24,7 @@ if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"
         if($result->num_rows === 0) exit('No rows');
         
 ?>
+
    <script src="js/jquery-3.3.1.min.js" ></script>
    <script src="js/axios.min.js"></script>
    <script src="js/main.js"></script> 
