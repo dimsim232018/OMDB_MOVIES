@@ -1,5 +1,6 @@
 <?php 
       include 'header.php'; 
+      include 'session.php'; 
       require_once 'dbconnect.php';
 // already logged in
 	if (isset($uid)){
@@ -39,13 +40,13 @@
 		
 		if ($stmt->num_rows > 0){
 			// user found
-			$stmt->bind_result($uid, $uname);
+			$stmt->bind_result($uid, $username);
 			$stmt->fetch();
 			$stmt->free_result();
 			$stmt->close();
 			// store session variables
-			$_SESSION["uid"]=$uid;
-			$_SESSION["username"]=$uname;
+			$_SESSION['uid']=$uid;
+			$_SESSION['username']=$username;
 			return true;
 		}else{
 			// user not found
