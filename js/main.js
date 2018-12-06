@@ -34,12 +34,15 @@ function getMovies(searchText){
          $.each(movies, (index, movie) => {
             output +=`
                
-			   <div class="col-md-3">
-                  <div class="well text-center">
-                     <img src="${movie.Poster}">
-                     <h5>${movie.Title}</h5>
-                     <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-primary" href="movie.php">Λεπτομέρειες</a>
-                  </div>
+			   <div class="col-md-3" id="movie_board">
+                  <div class="well text-center" id="movie_item">
+							<img id="movie_poster" src="${movie.Poster}">
+							<br>
+							<a onclick="movieSelected('${movie.imdbID}')" class="btn btn-profile" id="movie_button_1" href="movie.php">+</a> 
+							<h6>
+								<a href="movie.php" id="movie_title">${movie.Title}</a>
+							</h6>
+                   </div>
                </div>
 			   
             `;   

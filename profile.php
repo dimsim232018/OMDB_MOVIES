@@ -70,7 +70,7 @@ if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"
             			<tr>
             				<td style="align-text:center"><?php echo $title; ?></td>
             				<td style="align-txt:center"><?php echo $genre; ?></td>
-            				<td><button class="btn btn-info" onclick="deletemovie(this)">Delete</button></td>
+            				<td><button class="btn btn-profile" id="button_delete" onclick="deletemovie(this)">Delete</button></td>
             			</tr>
 					   
 					<?php } ?> 
