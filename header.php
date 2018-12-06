@@ -17,36 +17,36 @@
 <?php include 'session.php'; ?>
 
 <div class="jumbotron" id="header_jumbo">
-    <a href="index.php">
-        <h1 class="display-2 text-warning font-weight-bold" id="primary_title">WatchMyMovie</h1>
-    </a>  
-    
-    <p class="font-weight-bold" id="secondary_title">Powered by the OMDB API</p> 
+    <h1 class="display-2 text-warning font-weight-bold" id="primary_title">
+        <a class="display-2 text-warning font-weight-bold" href="index.php">WatchMyMovie</a>
+    </h1>
+   
+    <p class="font-weight-bold" id="secondary_title">Powered by the <a href="https://www.omdbapi.com/" target="_blank" style="color:white;text-decoration:underline;font-style:italic;">OMDb API</a></p> 
     <footer class="blockquote-footer font-italic">"Congratulations...", Agent Smith - The Matrix</footer>
 
 </div>
 
 <!--Nav menu-->
-<nav class="navbar bg-dark navbar-dark">
-    <div class="dropdown">
-        <button type="button" class="btn btn-warning dropdown-toggle" id="main_dropdown_button" data-toggle="dropdown">Menu</button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="index.php">Movie Search</a>
-                <div class="dropdown-divider"></div> 
-                <a class="dropdown-item" href="http://www.omdbapi.com/" target="_blank">OMDb API</a>
-                <a class="dropdown-item" href="about.php">About us</a>
-            </div>
-    </div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+    <ul class="navbar-nav">
+        <li>
+            <a class="btn font-weight-bold btn-main" href="index.php" style="margin-right:10px;">MovieSearch</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="about_link" href="about.php">About</a>
+        </li>
+    </ul>
 
     <ul class="navbar-nav ml-auto">                
         <?php if (!isset($username)){?>
             <li>
-                <a class="btn btn-success font-weight-bold" href="login.php"><?php echo 'Login';?></a>
+                <a class="btn font-weight-bold btn-login" href="login.php"><?php echo 'Login';?></a>
             </li>
         <?php }else{?>
             <li>
-                <a class="btn btn-info font-weight-bold" href="profile.php"><?php echo 'MyProfile';?></a>
-                <a class="btn btn-info font-weight-bold" href="logout.php"><?php echo 'Logout';?></a>
+                <a class="btn font-weight-bold btn-profile" href="profile.php" style="margin-right:10px"><?php echo 'MyProfile';?></a>
+                <a class="btn font-weight-bold btn-logout" href="logout.php"><?php echo 'Logout';?></a>
             </li>
         <?php };?>  
             </li>

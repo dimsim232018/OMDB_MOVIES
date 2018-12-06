@@ -13,7 +13,7 @@ $url=$_SERVER['QUERY_STRING'];
          <?php if (strcmp($url,'origin=register')==0) {echo "<script>alert('Thank you for registering... You are now logged in!');</script>";} else if (strcmp($url,'origin=logout')==0) {echo "<script>alert ('You are now logged out!');</script>";} ?>
       </div>
          <div class="jumbotron form">
-            <h3 class="text-center" style="margin-bottom:50px">Αναζήτηση ταινίας</h3>
+            <h3 class="text-center" style="margin-bottom:50px">Movie Search</h3>
             <form id="searchForm">
                <input type="text" class="form-control" id="searchText"  placeholder="Please enter a movie title and let the magic happen...">
             </form>       
