@@ -154,11 +154,32 @@
 
 #searchText {
 	text-align:center;
-	border-color:#ffbb33;
+	border-color:white;
 	border-radius:10px;
-	border-width:3px;
+	border-width:0px;
 }
 
+.form-control:focus {
+	box-shadow: 0 0 30px #ffbb33;
+/*	padding: 3px 0px 3px 3px;*/
+	margin: 5px 1px 3px 0px;
+	border: 1px solid#ffbb33;
+}
+
+Form.form-control {
+-webkit-transition: all 0.30s ease-in-out;
+-moz-transition: all 0.30s ease-in-out;
+-ms-transition: all 0.30s ease-in-out;
+-o-transition: all 0.30s ease-in-out;
+outline: none;
+/*padding: 3px 0px 3px 3px;*/
+margin: 5px 1px 3px 0px;
+border: 1px solid #ffbb33;
+}
+
+#search_jumbo {
+	background-color:transparent;
+}
 
 /*---------*/
 /*Login.php*/
