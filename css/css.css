@@ -224,7 +224,42 @@ table.table-dark.table-hover {
 
 .table > thead > tr:first-child > td, 
 .table > tbody > tr:first-child > td {
-    border: none;
+	border: none;
+}
+
+.table > thead > tr:first-child > td {
+	background-color:black;
+	color:white!important;
+}
+
+.table > tbody > tr:first-child > td {
+	border-top: 3px solid grey;
+}
+
+.paginate_button{
+	background-color: grey;
+}
+
+.table.dataTable thead > tr:first-child > td:nth-child(3).sorting,
+.table.dataTable thead > tr:first-child > td:nth-child(3) .sorting_asc,
+.table.dataTable thead > tr:first-child > td:nth-child(3) .sorting_desc,
+.table.dataTable thead > tr:first-child > td:nth-child(3).sorting_asc_disabled,
+.table.dataTable thead > tr:first-child > td:nth-child(3) .sorting_desc_disabled {
+  	background-image: none!important;
+}
+
+.table.bg-dark.dataTable.no-footer {
+	margin-bottom:10px;
+}
+
+#data-table_filter{
+	position:relative;
+	left:7px;
+}
+
+#data-table_paginate.dataTables_paginate.paging_simple_numbers {
+	position:relative;
+	left:7px;
 }
 
 /*-----------*/
@@ -272,17 +307,16 @@ table.table-dark.table-hover {
 }
 
 #data-table_wrapper.dataTables_wrapper.no-footer table#data-table.table.bg-dark.dataTable.no-footer tbody tr.even{
-	background-color:transparent;
+	background-color: #3f464d;
 	color:white;	
 	border-color:transparent;
 }
 
 #data-table_wrapper.dataTables_wrapper.no-footer table#data-table.table.bg-dark.dataTable.no-footer tbody tr.odd {
-	background-color: transparent;
+	background-color: #343a40;
 	color:white;
 	border-color: transparent;
 }
-
 
 #data-table_wrapper.dataTables_wrapper.no-footer div#data-table_length.dataTables_length {
 	color: grey;
@@ -302,10 +336,11 @@ table.table-dark.table-hover {
 	color:grey;
 }
 
-
 #data-table.table.bg-dark.dataTable.no-footer {
-	border:transparent;
+	border:3px solid grey!important;
 }
+
+
 
 
 /*------------------*/
