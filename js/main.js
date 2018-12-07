@@ -121,7 +121,7 @@ function getMovie(param){
             </form>
             <span id="result"></span></div></div>`;} */
               else{
-                  output+=`</div></div>`;
+					output+=`<a href="login.php" class="btn btn-profile" id="movie_btn_disabled">Please sign in for Wishlist features!</a></div></div>`
               }      
 		   
        $('#movie').html(output);	  
