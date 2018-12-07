@@ -344,6 +344,7 @@ table.table-dark.table-hover {
 
 #data-table.table.bg-dark.dataTable.no-footer {
 	border:3px solid grey!important;
+	border-radius:15px;
 }
 
 
