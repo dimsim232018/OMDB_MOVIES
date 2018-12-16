@@ -23,7 +23,10 @@
         <div style="text-decoration:underline">
             Copyright 2018-2020
         </div>
-    </div>
+		<div>
+		   <p class="font-weight-bold" id="secondary_title">Move to <a href="admin/admin_login.php" target="_blank" style="color:white;text-decoration:underline;font-style:italic;">WatchMyMovie Panel</a></p> 
+        </div> 
+	</div>
     <body>
 
 </html>
