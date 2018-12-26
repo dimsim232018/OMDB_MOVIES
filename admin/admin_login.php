@@ -70,7 +70,7 @@
     <body style="background-color:black">
         <div class="jumbotron" id="header_jumbo">
           <h1 class="display-2 text-warning font-weight-bold" id="primary_title">
-              <a class="display-2 text-warning font-weight-bold" href="index.php">WatchMyMovie</a>
+              <a class="display-2 text-warning font-weight-bold" href="../index.php">WatchMyMovie</a>
           </h1> 
           <p class="font-weight-bold" id="secondary_title">Powered by the OMDB API</p> 
           <footer class="blockquote-footer font-italic">"Congratulations...", Agent Smith - The Matrix</footer>

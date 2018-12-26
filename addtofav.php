@@ -35,7 +35,9 @@ if (!($stmt = $mysql->prepare("select id from movie where user_id=? AND id=?")))
 			}
 
         }else if($result->num_rows > 0){
-				echo "Already liked";        
+				
+				echo "Already liked";
+                			
            }
 
 ?>

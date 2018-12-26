@@ -21,7 +21,17 @@ if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"
 		}
 		
 		$result = $stmt->get_result();
-        if($result->num_rows === 0) exit('No rows');
+        if($result->num_rows === 0) 
+			//exit('No rows');
+		exit( ' <body style="background-color:black"> 
+		        <div class="jumbotron" id="wishlist" style=""> 
+	                <h3 style="text-align:center;color:white"> My Profile </h5>
+               </div>
+               <div class="jumbotron" id="wishlist"> 
+		           <h4 style="text-align:center; position:relative;color:white">My wishlist is empty!</h3>
+		       </div>
+			   <div> &nbsp; <br><br><br> </div>
+			   </body>');
         
 ?>
 
@@ -50,7 +60,7 @@ if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"
 </div>
 
 	<div class="jumbotron" id="wishlist"> 
-		<h4 style="text-align:center; position:relative;color:white">My wishlist</h3>
+		<h4 style="text-align:center; position:relative; color:white">My wishlist</h3>
 		<br>
 		<!--       <div class="table-responsive">  -->
           	<table class="table bg-dark" id="data-table" style="color:black">  
@@ -68,15 +78,16 @@ if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"
             				$movid = $row['id'];
             			  ?>
             			<tr>
-            				<td style="align-text:center"><?php echo $title; ?></td>
+            				<td style="align-text:center"><a href="#"><?php echo $title; ?></a></td>
             				<td style="align-txt:center"><?php echo $genre; ?></td>
             				<td><button class="btn btn-profile" id="button_delete" onclick="deletemovie(this)">Delete</button></td>
             			</tr>
 					   
 					<?php } ?> 
                </table>  
-     <!--     </div>  -->
+     
  </div> 
+ <div> &nbsp; <br><br><br> </div>
 
 </body>
  

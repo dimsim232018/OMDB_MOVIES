@@ -56,14 +56,7 @@
 		<!--Nav menu-->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
-  <!--  <ul class="navbar-nav">
-        <li>
-            <a class="btn font-weight-bold btn-main" href="index.php" style="margin-right:10px;">MovieSearch</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="about_link" href="about.php">About</a>
-        </li>
-    </ul>-->
+  
 
     <ul class="navbar-nav ml-auto">                
         <?php if (!isset($username)){?>
@@ -80,10 +73,11 @@
     </ul>
         
 </nav> 
-        <div class="jumbotron" id="wishlist"> 
-		<h4 style="text-align:center; position:relative;color:white">Users of WatchMyMovie</h3>
+        
+		<div class="jumbotron" id="wishlist"> 
+		<h4 style="text-align:center; position:relative; color:white">Users of WatchMyMovie</h3>
 		<br>		
-        <form name='frm' action='admin_panel.php' method='POST' onsubmit='return checkIfOk()'>
+        <form name='frm' action='admin_panel.php' method='POST' onsubmit='return checkIfOk()' class='form'>
 		<?php 				 
                 
 	         
@@ -111,21 +105,21 @@
 			 echo"	       <thead>";
 			 echo"		      <tr class='table-no-border' style='border-radius:15px 15px 0px 0px;font-weight:bold;border-bottom:2px solid;border-color:lightgray'> "; 
              echo"               <td>Username</td>  ";
-			 echo"			     <td>Password</td>";
+			 
 			 echo"			     <td>Email</td>";
 			 echo"			     <td>Διαγραφή</td>";
              echo"  		     </tr>  ";
 			 echo"	      </thead>";
              
 			 while ($row = $result->fetch_assoc()){				 
-				echo "<tr>";
+				echo "<tr class='table-no-border' style='border-radius:15px 15px 0px 0px;font-weight:bold;border-bottom:2px solid;border-color:lightgray'>";
 				echo "<td>".$row['username']."</td>";
-				echo "<td>".$row['password']."</td>";
+				
 				echo "<td><a href='mailto:".$row['email']."'>".$row['email']."</a></td>";
 				echo "<td align='center'><input type='checkbox' name='emails[]' value='".$row['email']."'</td>";
 				echo "</tr>";				
 			 }
-			 echo "<tr><td colspan=4 align='center'><input name='sub' type=submit value='Διαγραφή'/></td></tr>";
+			 echo "<tr class='table-no-border' style='border-radius:15px 15px 0px 0px;font-weight:bold;border-bottom:2px solid;border-color:lightgray'><td colspan=3 align='center'><input name='sub' type=submit value='Διαγραφή'/></td></tr>";
 			 echo "</table>";
 		
 			 $mysql->close(); 	             	                                                        

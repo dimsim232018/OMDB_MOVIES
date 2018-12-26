@@ -4,7 +4,7 @@ include 'session.php';
       $msg="";
  function register($username,$password_1,$password_2,$email){
      global $mysql;
-	global $msg;
+	 global $msg;
       $username=trim($username);
       $username = mysqli_real_escape_string($mysql,$_POST['username']);
       $username_san = filter_var($username, FILTER_SANITIZE_STRING);
