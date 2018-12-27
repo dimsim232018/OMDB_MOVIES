@@ -37,7 +37,7 @@ if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"
 
    <script src="js/jquery-3.3.1.min.js" ></script>
    <script src="js/axios.min.js"></script>
-   <script src="js/main.js"></script> 
+   <script src="main.js"></script> 
    <script src="js/bootstrap.min.js" type="text/javascript"></script>
 
 <!-- DATA TABES SCRIPT -->
@@ -47,46 +47,50 @@ if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"
    $(function() {
     $("#data-table").dataTable({
         "iDisplayLength": 10,
-        "aLengthMenu": [[10, 25, 50, 100,  -1], [10, 25, 50, 100, "All"]]
+        "aLengthMenu": [[10, 25, 50, 100,  -1], [10, 25, 50, 100, "All"]],
+        "searching":false,
+        "bPaginate":false
        });
    });
   </script>
-  
+  <script>
+$(document).ready(function(){
+ load_data();
+ $('#search').change(function(){
+   load_data();
+ });
+});
+</script>
 
 <body style="background-color:black"> 
 
-<div class="jumbotron" id="wishlist" style=""> 
+<div class="jumbotron" id="" style=""> 
 	<h3 style="text-align:center;color:white"> My Profile </h5>
 </div>
 
-	<div class="jumbotron" id="wishlist"> 
+	<div class="jumbotron"> 
 		<h4 style="text-align:center; position:relative; color:white">My wishlist</h3>
 		<br>
 		<!--       <div class="table-responsive">  -->
-          	<table class="table bg-dark" id="data-table" style="color:black">  
-				<thead>
-					<tr class="table-no-border" style="border-radius:15px 15px 0px 0px;font-weight:bold;border-bottom:2px solid;border-color:lightgray">  
-                              <td>Title</td>  
-						<td>Genre</td>
-						<td></td>   
-               		</tr>  
-				</thead>
-                          <?php while($row = $result->fetch_assoc()) 
-                          {
-            				$title = $row['title'];
-            				$genre = $row['genre'];
-            				$movid = $row['id'];
-            			  ?>
-            			<tr>
-            				<td style="align-text:center"><a href="#"><?php echo $title; ?></a></td>
-            				<td style="align-txt:center"><?php echo $genre; ?></td>
-            				<td><button class="btn btn-profile" id="button_delete" onclick="deletemovie(this)">Delete</button></td>
-            			</tr>
-					   
-					<?php } ?> 
-               </table>  
+		<select id="search" style="float:right">
+  <option>All</option>
+  <option>Action</option>
+  <option> Adventure</option>
+  <option>Fantasy</option>
+  <option>Sci-Fi</option>
+   <option>Drama</option>
+  <option> Romance</option>
+  <option>Crime</option>
+  <option>Thriller</option>
+<option>Animation</option>
+<option>Comedy</option>
+<option>Adventure</option>
+<option>Western</option>
+</select>
+ <div id="wishlist"></div>		
      
  </div> 
+
  <div> &nbsp; <br><br><br> </div>
 
 </body>
