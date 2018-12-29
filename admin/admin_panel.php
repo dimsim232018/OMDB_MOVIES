@@ -3,6 +3,11 @@
       include '../session.php'; 
       require_once '../dbconnect.php';
 	  global $mysql;
+	  //dokimi 
+	if (!isset($_SESSION['uid'])) 
+	{ 
+		header("Location: admin_login.php"); 
+	} 	
 ?>
 <!DOCTYPE html >
 <html>

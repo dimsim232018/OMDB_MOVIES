@@ -14,5 +14,11 @@ if($status == PHP_SESSION_NONE){
 	if (isset($_SESSION['username'])){
 		$username=$_SESSION['username'];
 	}
-	
+
+
+
+
 ?>
+
+
+

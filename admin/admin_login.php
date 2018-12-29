@@ -21,7 +21,8 @@
                 } 
 		//prepare
                  $password = md5($password);
-		if (!($stmt = $mysql->prepare("select id, username from user where username=? and password=?"))) {
+		//if (!($stmt = $mysql->prepare("select id, username from user where username=? and password=?"))) {
+		if (!($stmt = $mysql->prepare("select uid, username from admin where username=? and password=?"))) {	
 //			 throw new Exception("Prepare failed: (" . $mysql->errno . ") " . $mysql->error);
 			 return false;
 		}
