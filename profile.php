@@ -37,7 +37,7 @@ if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"
 
    <script src="js/jquery-3.3.1.min.js" ></script>
    <script src="js/axios.min.js"></script>
-   <script src="main.js"></script> 
+   <script src="js/main.js"></script> 
    <script src="js/bootstrap.min.js" type="text/javascript"></script>
 
 <!-- DATA TABES SCRIPT -->
