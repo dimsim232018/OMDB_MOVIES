@@ -47,13 +47,13 @@ if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"
    $(function() {
     $("#data-table").dataTable({
         "iDisplayLength": 10,
-        "aLengthMenu": [[10, 25, 50, 100,  -1], [10, 25, 50, 100, "All"]],
-        "searching":false
+        "aLengthMenu": [[10, 25, 50, 100,  -1], [10, 25, 50, 100, "All"]]
                });
    });
   </script>
   <script>
 $(document).ready(function(){
+  $("#data-table").DataTable();
  load_data("All");
  $('#search').change(function(){
    load_data();
@@ -86,11 +86,13 @@ $(document).ready(function(){
 <option>Adventure</option>
 <option>Western</option>
 </select>
+ <div id="wishlist">
+</div>
 </div> 
 
 		<!--       <div class="table-responsive">  -->
 		
- <div id="wishlist"></div>		
+		
      
  
 
