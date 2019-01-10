@@ -341,6 +341,8 @@ function deletemovie(r){
 			var i = r.parentNode.parentNode.rowIndex;
 
 			document.getElementById("data-table").deleteRow(i);
+			var finalresult = Number(document.getElementById("resultlabel").innerHTML) - 1;
+			document.getElementById("resultlabel").innerHTML = finalresult;
 
 		})
 
