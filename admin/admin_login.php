@@ -2,10 +2,7 @@
       
       include '../session.php'; 
       require_once '../dbconnect.php';
-// already logged in
-	if (isset($uid)){
-		header('Location: admin_panel.php');
-	}
+
 	
 	function login($username,$password){
 		global $mysql;
@@ -61,7 +58,7 @@
 		$username=$_REQUEST['username'];
 		$password=$_REQUEST['password'];
 		if (login($username,$password)){
-			header('Location: admin_login.php');
+			header('Location: admin_panel.php');
 		}
 	}
 ?>
