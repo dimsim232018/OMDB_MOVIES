@@ -43,12 +43,35 @@ include 'session.php';
         $msg.="$email is not a valid email address";
      } 
       
-      if ($msg!=''){
+      
+      $password = md5($password_1); //encrypt password before storing in database(security)
+      //check if username  already exists
+      $stmt_check = $mysql->prepare("SELECT * FROM user where username=?");
+      $stmt_check->bind_param("s", $username);
+      // execute
+		$stmt_check->execute();
+		$stmt_check->store_result();
+		
+		if ($stmt_check->num_rows > 0){
+            $msg.="Username already exists.";
+        }
+      //check if password already exists
+        $stmt_check_psw = $mysql->prepare("SELECT * FROM user where password=?");
+         $stmt_check_psw->bind_param("s", $password);
+      // execute
+		$stmt_check_psw->execute();
+		$stmt_check_psw->store_result();
+		
+		if ($stmt_check_psw->num_rows > 0){
+            $msg.="Password already exists.";
+        }
+        if ($msg!=''){
           return false;
       }
+      
       // if there are no errors , save user to database
 	  //must check if password and username exists already
-         $password = md5($password_1); //encrypt password before storing in database(security)
+         
 	$stmt = $mysql->prepare("INSERT INTO user (username,email,password) 
                    VALUES (?,?,?)");
 		

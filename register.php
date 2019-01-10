@@ -93,7 +93,6 @@ $("#registerForm").submit(function(e){
                     
                 })
                 .fail(function() {
-                  console.log(formData);
                     console.log("fail");
                 $('#msg_box').text("ajax fail");
                 });
