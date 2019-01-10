@@ -1,8 +1,8 @@
 <?php
 // mysql
 $mysql_host='localhost';
-$mysql_username='webeng3';
-$mysql_password='18webeng319';
+$mysql_username='root';
+$mysql_password='sofia!@#';
 $mysql_schema='webeng3';
 
 
