@@ -363,7 +363,7 @@ var genre = select.options[select.selectedIndex].text;
    data:{'genre':genre},
    success:function(data)
    {
-    $('#wishlist').html(data);
+    $("#wishlist").html(data);
    }
   });
  }

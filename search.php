@@ -20,7 +20,7 @@ $result = mysqli_query($mysql, $query);
 if(mysqli_num_rows($result) > 0)
 {
  $output .= '
-<table class="table bg-dark" id="data-table" style="color:black">  
+<table class="table bg-dark" id="data-table" style="">  
 				<thead>
 				<tr>
 				

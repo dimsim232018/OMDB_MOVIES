@@ -48,14 +48,13 @@ if (!($stmt = $mysql->prepare("select id,title,genre from movie where user_id=?"
     $("#data-table").dataTable({
         "iDisplayLength": 10,
         "aLengthMenu": [[10, 25, 50, 100,  -1], [10, 25, 50, 100, "All"]],
-        "searching":false,
-        "bPaginate":false
-       });
+        "searching":false
+               });
    });
   </script>
   <script>
 $(document).ready(function(){
- load_data();
+ load_data("All");
  $('#search').change(function(){
    load_data();
  });
@@ -64,15 +63,15 @@ $(document).ready(function(){
 
 <body style="background-color:black"> 
 
-<div class="jumbotron" id="" style=""> 
+
+ <div class="jumbotron"  style="position:relative;top:50px;margin-left:20%;margin-right:20%;background-color: #343a40;text-align: center;color:lightgray"> 
 	<h3 style="text-align:center;color:white"> My Profile </h5>
 </div>
 
-	<div class="jumbotron"> 
+	<div class="jumbotron" style="position:relative;top:50px;margin-left:20%;margin-right:20%;background-color: #343a40;text-align: center;color:lightgray"> 
 		<h4 style="text-align:center; position:relative; color:white">My wishlist</h3>
 		<br>
-		<!--       <div class="table-responsive">  -->
-		<select id="search" style="float:right">
+<select id="search" style="float:right">
   <option>All</option>
   <option>Action</option>
   <option> Adventure</option>
@@ -87,9 +86,13 @@ $(document).ready(function(){
 <option>Adventure</option>
 <option>Western</option>
 </select>
+</div> 
+
+		<!--       <div class="table-responsive">  -->
+		
  <div id="wishlist"></div>		
      
- </div> 
+ 
 
  <div> &nbsp; <br><br><br> </div>
 
