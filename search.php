@@ -20,6 +20,7 @@ $result = mysqli_query($mysql, $query);
 if(mysqli_num_rows($result) > 0)
 {
  $output .= '
+<p align="left">Total <label id="resultlabel">'.mysqli_num_rows($result).'</label> results</p>
 <table class="table bg-dark" id="data-table" style="">  
 				<thead>
 				<tr>

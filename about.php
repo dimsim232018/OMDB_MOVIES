@@ -26,6 +26,9 @@
 		<div>
 		   <p class="font-weight-bold" id="secondary_title">Move to <a href="admin/admin_login.php" target="_blank" style="color:white;text-decoration:underline;font-style:italic;">WatchMyMovie Panel</a></p> 
         </div> 
+		<div>
+		   <p class="font-weight-bold" id="secondary_title">Contact : <a href="mailto:watchmymovie@mailinator.com" style="color:white;text-decoration:underline;font-style:italic;">watchmymovie@mailinator.com</a></p> 
+        </div> 
 	</div>
     <body>
 
